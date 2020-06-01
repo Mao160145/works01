@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html >
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>登录</title>
+		<link rel="stylesheet" type="text/css" href="../../base/css/style.css" />
+	</head>
+<style type="text/css">
+	
+</style>
+	<body id="login_bg">
+		<div class="login_wrapper">
+			<div class="login_header">
+				<a href="h/"><img src="../../images/虎鲸.png" width="80" height="80" alt="虎鲸招聘" /></a>
+				<span>虎鲸招聘</span>
+				<div id="cloud_s"><img src="../../images/cloud_s.png" width="81" height="52" alt="cloud" /></div>
+				<div id="cloud_m"><img src="../../images/cloud_m.png" width="136" height="95" alt="cloud" /></div>
+			</div>
+
+			<div class="login_box">
+				<form id="loginForm" action="#">
+					<input type="text" id="account" name="user_account" value="" tabindex="1" placeholder="请输入登录账号" style="width: 300px"/>
+					<input type="password" id="passWord" name="login_password" tabindex="2" placeholder="请输入密码" style="width: 300px"/>
+					<button type="submit" class="submitLogin login" title="登 &nbsp; &nbsp; 录" style="color:white;"/>登 &nbsp; &nbsp; 录</button>
+				</form>
+
+				<div class="login_right">
+					<div class="a">还没有虎鲸帐号？</div>
+					<a href="/views/client/registered.html" class="registor_now">立即注册</a>
+					<div class="login_others">使用以下帐号直接登录:</div>
+					<img src="../../images/qq.png" height="30px" width="30px"/>
+					<img src="../../images/微信.png" height="30px" width="30px"/>
+					<img src="../../images/微博.png" height="30px" width="30px"/>
+				</div>
+			</div>
+			<div class="login_box_btm"></div>
+		</div>
+		<script src="../../base/js/jquery-1.11.3.min.js"></script>
+		<script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+		<script src="../../base/js/login.js"></script>
+	</body>
+</html>

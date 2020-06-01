@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>个人设置</title>
+	<link rel="stylesheet" href="../../../base/plugins/layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="../../../base/plugins/font-awesome/css/font-awesome.css" media="all" />
+</head>
+<style type="text/css">
+	.with {
+
+		margin-top: 100px;
+
+	}
+	.witha{
+		margin-left:6.5%;
+		position: absolute;
+	}
+	img{
+		height: 100px;
+		width: 100px;
+		border-radius:50px;
+	}
+
+</style>
+
+<body>
+<!--表单-->
+<form class="layui-form" action="javascript:;">
+	<!--隐藏域-->
+	<input type="hidden" name="admin_id" id="admin_id">
+	<input type="hidden" name="admin_name" id="admin_name">
+	<input type="hidden" name="version" id="version">
+
+	<blockquote class="site-text layui-elem-quote">
+		<h3>个人设置</h3>
+	</blockquote>
+
+
+	<div class="layui-form-item ">
+		<label class="layui-form-label">头像:</label>
+		<div class="col-sm-10 witha">
+			<img id="xmTanImg"/>
+			<div id="xmTanDiv"></div>
+			<input type="file" name="file" id="file" onchange="xmTanUploadImg(this)" accept="image/*"/><br/>
+		</div>
+
+	</div>
+
+	<div class="layui-form-item with">
+		<label class="layui-form-label">用户名:</label>
+		<div class="layui-input-block">
+			<input type="text" name="admin_account" required lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+		</div>
+	</div>
+
+	<div class="layui-form-item">
+		<label class="layui-form-label">姓名:</label>
+		<div class="layui-input-block">
+			<!--verify验证-->
+			<input type="text" name="admin_name" required lay-verify="required" placeholder="请输入姓名" autocomplete="off" class="layui-input">
+		</div>
+	</div>
+
+	<div class="layui-form-item">
+		<label class="layui-form-label">手机:</label>
+		<div class="layui-input-block">
+			<input type="text" name="admin_phone" required lay-verify="required|phone" placeholder="请输入手机号" autocomplete="off" class="layui-input">
+		</div>
+	</div>
+
+	<div class="layui-form-item">
+		<label class="layui-form-label">出生日期:</label>
+		<div class="layui-input-block">
+			<input type="text" id="admin_birthday" name="admin_birthday" required lay-verify="required" placeholder="请输入出生日期" autocomplete="off" class="layui-input">
+		</div>
+	</div>
+
+	<div class="layui-form-item">
+		<label class="layui-form-label">性别:</label>
+		<div class="layui-input-block">
+			<input type="radio" name="admin_sex" value="0" title="保密" checked>
+			<input type="radio" name="admin_sex" value="1" title="男">
+			<input type="radio" name="admin_sex" value="2" title="女">
+		</div>
+	</div>
+
+	<div class="layui-form-item">
+		<div class="layui-input-block">
+			<button type="reset" lay-submit class="layui-btn layui-btn-sm" lay-filter="updateAdmin">立即提交</button>
+			<button class="layui-btn layui-btn-sm layui-btn-danger">关闭</button>
+		</div>
+	</div>
+</form>
+
+<script type="text/javascript" src="../../../base/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../../../base/plugins/layui/layui.js"></script>
+<script src="js/personalSetting.js"></script>
+</body>
+<script>
+
+    //判断浏览器是否支持FileReader接口
+    if (typeof FileReader == 'undefined') {
+        document.getElementById("xmTanDiv").InnerHTML = "<h1>当前浏览器不支持FileReader接口</h1>";
+        //使选择控件不可操作
+        document.getElementById("file").setAttribute("disabled", "disabled");
+    }
+    //选择图片，马上预览
+    function xmTanUploadImg(obj) {
+        var file = obj.files[0];
+
+        console.log(obj);console.log(file);
+        console.log("file.size = " + file.size);  //file.size 单位为byte
+
+        var reader = new FileReader();
+
+        //读取文件过程方法
+        reader.onloadstart = function (e) {
+            console.log("开始读取....");
+        }
+        reader.onprogress = function (e) {
+            console.log("正在读取中....");
+        }
+        reader.onabort = function (e) {
+            console.log("中断读取....");
+        }
+        reader.onerror = function (e) {
+            console.log("读取异常....");
+        }
+        reader.onload = function (e) {
+            console.log("成功读取....");
+
+            var img = document.getElementById("xmTanImg");
+            img.src = e.target.result;
+            //或者 img.src = this.result;  //e.target == this
+        }
+
+        reader.readAsDataURL(file);
+    }
+</script>
+</html>

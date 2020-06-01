@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>修改用户信息</title>
+		<link rel="stylesheet" href="../../../base/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../../base/plugins/font-awesome/css/font-awesome.css" media="all" />
+	</head>
+	<style type="text/css">
+		.with {
+			margin-left: 55px;
+			width: 1155px;
+			height: 44px;
+		}
+	</style>
+
+	<body>
+		<blockquote class="site-text layui-elem-quote">
+			<h3>修改用户</h3>
+		</blockquote>
+		<!--表单-->
+		<form class="layui-form" action="javascript:;">
+			<input type="hidden"  name="token" id="token" />
+			<input type="hidden"  name="user_id" id="userId" />
+			<input type="hidden"  name="version" id="version" />
+			<!--<input type="hidden"  name="head_img_url" id="head_img_url" />-->
+
+			<div class="layui-form-item ">
+				<label class="layui-form-label">商标</label>
+				<img src="../../../images/tx.jpg" width="100px" height="100px">
+			</div>
+
+			<div class="layui-form-item with">
+				<input id="showImg" class="layui-input with" type="file" name="user_url" placeholder="请上传头像" />
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">姓名:</label>
+				<div class="layui-input-block">
+					<input type="text" name="user_name" required lay-verify="required" placeholder="请输入姓名" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">账号:</label>
+				<div class="layui-input-block">
+					<!--verify验证-->
+					<input type="text" name="user_account" required lay-verify="required" placeholder="请输入账号" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">手机号:</label>
+				<div class="layui-input-block">
+					<input type="text" name="user_phone" required  placeholder="请输入手机号" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">性别</label>
+				<div class="layui-input-block">
+					<input type="radio" name="user_sex" value="0" title="保密" checked>
+					<input type="radio" name="user_sex" value="1" title="男">
+					<input type="radio" name="user_sex" value="2" title="女">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">年龄:</label>
+				<div class="layui-input-block">
+					<input type="text" name="user_age" required  placeholder="请输入年龄" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+					<button class="layui-btn layui-btn-sm updateUser" lay-submit lay-filter="updateUser">提交</button>
+					<button class="layui-btn layui-btn-sm layui-btn-primary" type="reset">重置</button>
+					<button class="layui-btn layui-btn-sm layui-btn-danger">删除</button>
+				</div>
+			</div>
+		</form>
+		<script type="text/javascript" src="../../../base/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../../../base/plugins/layui/layui.js"></script>
+		<script type="text/javascript" src="../../../index/js/baseUtil.js" ></script>
+		<script src="js/updateuser.js" ></script>
+	</body>
+
+</html>

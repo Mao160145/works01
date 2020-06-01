@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>显示所有招聘信息首页</title>
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../../base/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../../base/plugins/font-awesome/css/font-awesome.css" media="all" />
+		<link rel="stylesheet" href="../../../base/css/base.css">
+		<link rel="stylesheet" href="../../../base/css/home.css">
+		<link rel="stylesheet" href="../../../base/css/lg.css">
+		<link rel="stylesheet" href="../../../base/css/recruitment.css">
+	</head>
+
+
+	<body>
+		<!--侧边导航栏-->
+		<div class="aui-wrapper">
+			<!--轮播-->
+			<div class="float">
+				<div id="myCarousel" class="carousel slide">
+					<!-- 轮播（Carousel）指标 -->
+					<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
+					</ol>
+					<!-- 轮播（Carousel）项目 -->
+					<div class="carousel-inner">
+						<div class="item active">
+							<img src="../../../images/login1.jpg" alt="First slide">
+							<div class="carousel-caption">办公区</div>
+						</div>
+						<div class="item">
+							<img src="../../../images/login2.jpg" alt="Second slide">
+							<div class="carousel-caption">休闲区</div>
+						</div>
+						<div class="item">
+							<img src="../../../images/login3.jpg" alt="Third slide">
+							<div class="carousel-caption">会议区</div>
+						</div>
+					</div>
+					<!-- 轮播（Carousel）导航 -->
+					<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+			<div class="aui-wrapper-header">
+
+					<input type="text" class="aui-wrapper-input " id="sousuoinput">
+					<input type="submit" class="aui-wrapper-submit sousuo2">
+			</div>
+			<div class="aui-wrapper-header-info">
+				<dl>
+					<dt>热门搜索：</dt>
+					<dd>
+						<a href="#" class="sousuo3">产品运营</a>
+					</dd>
+					<dd>
+						<a href="#" class="sousuo3">畅唐网络</a>
+					</dd>
+					<dd>
+						<a href="#" class="sousuo3">贝米钱包</a>
+					</dd>
+					<dd>
+						<a href="#" class="sousuo3" >产品经理</a>
+					</dd>
+					<dd>
+						<a href="#" class="sousuo3">新媒体运营</a>
+					</dd>
+					<dd>
+						<a href="#" class="sousuo3">运营总监</a>
+					</dd>
+					<dd>
+						<a href="#" class="sousuo3">畅唐网络</a>
+					</dd>
+					<dd>
+						<a href="#" class="sousuo3">数据运营</a>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<!--导航内容-->
+
+		<div class="aui-container-bxo clearfix">
+			<div class="aui-content-sidebar clearfix" id="nav">
+				<div class="aui-content-main menu" >
+
+					<div class="aui-content-menu">
+						<div class="aui-content-menu-head">
+							<div class="aui-content-menu-head-list">
+								<h2>产品</h2>
+								<i class="aui-content-menu-head-list-arrow"></i>
+							</div>
+						</div>
+			<div class="aui-content-menu-dow aui-ds">
+
+							<dl>
+							<dt>
+								<span>后端开发</span>
+							</dt>
+							<dd>
+								<a href="#" class="aui-a-curr">Java</a>
+								<a href="#">其它</a>
+							</dd>
+						    </dl>
+
+							<dl>
+								<dt>
+							<span>移动开发</span>
+						    </dt>
+								<dd>
+									<a href="#" class="aui-a-curr">HTML5</a>
+									<a href="#">其它</a>
+								</dd>
+							</dl>
+
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!--招聘信息-->
+		<div class="lg">
+			<blockquote>
+				<span class="glyphicon glyphicon-bookmark" style="color: #F48E51;"></span>招聘信息
+				<small>Recruitment<cite title="Source Title">information</cite></small>
+			</blockquote>
+           <form class="layui-form" action="javascript:;">
+			<!--表格-->
+			<div class="zp">
+				<!--显示招聘-->
+			</div>
+			   <div id="table_page" class="companycenter"></div>
+		   </form>
+			<!--尾部-->
+			<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+				<p>欢迎来到虎鲸招聘网,找工作就选虎鲸网</p>
+				<p>投诉电话:12088208820
+			</div>
+		</div>
+		<script type="text/javascript" src="../../../base/plugins/layui/layui.js"></script>
+		<script type="text/javascript" src="../../../index/js/baseUtil.js" ></script>
+		<script type="text/javascript" src="../../../base/js/jquery.min.js"></script>
+		<script type="text/javascript" src="../../../base/js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/recruitment.js"></script>
+
+
+	</body>
+
+</html>

@@ -1,0 +1,70 @@
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>首页</title>
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../base/css/index.css">
+	</head>
+
+	<body>
+
+		<!--水平导航-->
+		<nav class="navbar navbar-default navbar-inverse" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="index1.html" target="iframe_a">首页</a>
+					<a class="navbar-brand" href="../client/recruitmentInformation/recruitment.html" target="iframe_a">招聘信息</a>
+					<a class="navbar-brand" href="../client/companyInformation/company.html" target="iframe_a">公司信息</a>
+				</div>
+
+				<ul class="nav navbar-nav navbar-right">
+
+
+					<div id="notlogin">
+						<li>
+							<a href="/views/client/registered.html" class="glyphicon glyphicon-user" >注册</a>
+						</li>
+						 <a href="/views/client/login.html" class="glyphicon glyphicon-log-in" >登录</a>
+					</div>
+			            <div id="inlogin">
+			            <li class="dropdown">
+						<a href="#"  class="dropdown-toggle" data-toggle="dropdown"><img class="img-circle headImg"  style="height: 30px; width: 30px"><span class="userName"></span></a>
+						<ul class="dropdown-menu">
+							<li id="company">
+								<a href="/views/client/companyInformation/companyPersonal.html" target="iframe_a">个人信息</a>
+							</li>
+							<li id="user">
+								<a href="/views/client/userInformation/user.html" target="iframe_a">个人信息</a>
+							</li>
+							<li class="divider"></li>
+							<li id="insertcompany">
+								<a id="insertCom" target="iframe_a">添加公司</a>
+							</li>
+							<li id="insert">
+								<a id="insertInformation" target="iframe_a">添加简历</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a id="outlogin">注销</a>
+							</li>
+						</ul>
+					</li>
+					   </div>
+				</ul>
+			</div>
+		</nav>
+
+		<iframe src="index1.html" name="iframe_a" width="100%" height="100%" style="margin-top: -21px;" frameborder="0"></iframe>
+		 <!--底部-->
+		<footer class="footer navbar-fixed-bottom ">
+		    <div class="container" style="background-color: #000000; height:20px; width: 100%;">
+		    <font color="white"><center>SanRenXing&nbsp;©&nbsp;湖南科技职业学院</center></font>
+		    </div>
+		</footer>
+
+		<script src="../../base/js/jquery-1.11.3.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../../base/js/index.js"></script>
+</body>
+</html>

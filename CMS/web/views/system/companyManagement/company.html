@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>公司管理</title>
+		<link rel="stylesheet" href="../../../base/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../../base/plugins/font-awesome/css/font-awesome.css" media="all" />
+	</head>
+
+	<body>
+		<blockquote class="site-text layui-elem-quote">
+			<h3>公司管理</h3>
+		</blockquote>
+		<div class="layui-col-md8">
+			<label>公司名称:</label>
+			<div class="layui-input-inline">
+				<input type="text" required lay-verify="required" id="name" placeholder="请输入公司名称" autocomplete="off" class="layui-input">
+			</div>&emsp;
+
+			<label>公司别名:</label>
+			<div class="layui-input-inline">
+				<input type="text" required lay-verify="required" id="likeName1" placeholder="请输入公司别名" autocomplete="off" class="layui-input">
+			</div>
+			
+			<button class="layui-btn layui-btn-danger layui-btn-sm batchDeleteCompany">批量删除</button>
+			<button class="layui-btn layui-btn-sm search">搜索</button>
+		</div>
+
+
+		<div class="layui-row">
+			<form class="layui-form" action="javascript:;">
+				<table class="layui-table">
+					<colgroup>
+						<col width="50">
+						<col width="100">
+						<col width="100">
+						<col width="100">
+						<col width="100">
+						<col width="100">
+						<col width="100">
+						<col width="120">
+						<col width="100">
+						<col width="200">
+					</colgroup>
+
+					<thead>
+						<tr>
+							<th><input type="checkbox" lay-filter="parentBox" class="parentBox" lay-skin="primary"></th>
+							<th>公司名称</th>
+							<th>公司别名</th>
+							<th>公司地址</th>
+							<th>公司类型</th>
+							<th>公司产业</th>
+							<th>公司规模</th>
+							<th>公司余额</th>
+							<th>审核状态</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+
+					<tbody class="table_tbody">
+					</tbody>
+				</table>
+				<div id="table_page"></div>
+			</form>
+		</div>
+
+		<script type="text/javascript" src="../../../base/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../../../base/plugins/layui/layui.js"></script>
+		<script type="text/javascript" src="js/company.js">
+		</script>
+	</body>
+</html>

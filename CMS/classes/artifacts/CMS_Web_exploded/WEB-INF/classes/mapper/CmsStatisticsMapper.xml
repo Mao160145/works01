@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dc.dao.CmsStatisticsDao">
+    <!--查询所有统计信息(分页)-->
+    <select id="selectStatisticsAllByPage" parameterType="map" resultType="com.dc.pojo.CmsStatistics">
+     /*   SELECT a.Statistics_id,a.Statistics_amount,a.Statistics_turnover,a.Statistics_recruit,a.is_deleted,
+b.company_id,b.company_name FROM t_cms_statistics AS a,t_cms_company AS b WHERE a.company_id=b.company_id*/
+          SELECT * FROM t_cms_statistics WHERE  is_deleted=0
+        <if test="likeName1!=null">
+            and `company_name` like concat('%',#{likeName1},'%')
+        </if>
+</select>
+
+</mapper>

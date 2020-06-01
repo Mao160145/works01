@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dc.dao.CmsLoginLogDao">
+    <!-- 新增登录日志 useGeneratedKeys="true" keyProperty="login_log_id" 让实体类的id有值 -->
+    <insert id="insertLoginLog" parameterType="com.dc.pojo.CmsLoginLog" useGeneratedKeys="true" keyProperty="login_log_id">
+        insert into t_cms_loginlog
+        (user_id,user_name,login_time)
+        values
+        (#{user_id},#{user_name},now())
+    </insert>
+    <!--查询所有登录日志-->
+    <select id="selectLoginLog" resultType="com.dc.pojo.CmsLoginLog">
+        select * from t_cms_LoginLog
+    </select>
+
+
+</mapper>

@@ -1,0 +1,115 @@
+{
+  "resultCode": 0,
+  "message": "",
+  "data": {
+    "menu_1": [
+      {
+        "menu_id": 3,
+        "code": "3",
+        "name": "系统管理",    
+        "is_leaf": 0,
+        "fk_parent_id": 0,
+        "is_show": 1,
+        "url": "",
+        "icon": "fa fa-cogs",
+        "ids": "",
+        "version": 0
+      },
+
+      {
+        "menu_id": 4,
+        "code": "4",
+        "name": "统计管理",    
+        "is_leaf": 0,
+        "fk_parent_id": 0,
+        "is_show": 1,
+        "url": "",
+        "icon": "fa fa-cogs",
+        "ids": "",
+        "version": 0
+      }
+    ],
+    "menu_2": [
+      {
+        "menu_id": 8,
+        "code": "301",
+        "name": "用户管理",
+        "is_leaf": 1,
+        "fk_parent_id":3,
+        "is_show": 1,
+        "url": "userManager/user.html",
+        "icon": "fa fa-user",
+        "ids": "",
+        "version": 0
+      },
+      {
+        "menu_id": 14,
+        "code": "302",
+        "name": "公司管理",
+        "is_leaf": 1,
+        "fk_parent_id":3,
+        "is_show": 1,
+        "url": "companyManagement/company.html",
+        "icon": "fa fa-building",
+        "ids": ".permission_search;.permission_add;.permission_update;.permission_delete;",
+        "version": 0
+      },
+      {
+        "menu_id": 15,
+        "code": "303",
+        "name": "分类管理",
+        "is_leaf": 1,
+        "fk_parent_id": 3,
+        "is_show": 1,
+        "url": "recruitmentManagement/recruitmentStatistics.html",
+        "icon": "fa fa-th-large",
+        "ids": ".permission_search;.permission_add;.permission_update;.permission_delete;.permission_imp;.permission_exp;",
+        "version": 0
+      },
+      {
+        "menu_id": 15,
+        "code": "304",
+        "name": "招聘管理",
+        "is_leaf": 1,
+        "fk_parent_id":3,
+        "is_show": 1,
+        "url": "recruitmentManagement/recruitment.html",
+        "icon": "fa fa-line-chart",
+        "ids": ".permission_search;.permission_add;.permission_update;.permission_delete;",
+        "version": 0
+      },
+      {
+        "menu_id": 14,
+        "code": "401",
+        "name": "金额统计图",
+        "is_leaf": 1,
+        "fk_parent_id":4,
+        "is_show": 1,
+        "url": "amountManagement/amount.html",
+        "icon": "fa fa-money",
+        "ids": ".permission_search;.permission_add;.permission_update;.permission_delete;",
+        "version": 0
+      },{
+        "menu_id": 15,
+        "code": "402",
+        "name": "金额统计表",
+        "is_leaf": 1,
+        "fk_parent_id":4,
+        "is_show": 1,
+        "url": "amountManagement/statistical.html",
+        "icon": "fa fa-money",
+        "ids": ".permission_search;.permission_add;.permission_update;.permission_delete;",
+        "version": 0
+      }
+
+    ]
+  },
+  "tempMFile": null,
+  "filesArray": null,
+  "queryParams": null,
+  "listAdvancedQuery": null,
+  "aopMesg": "",
+  "token": "dd7162e7-deae-6dea-cc35-34ce6fdfe186",
+  "permission": null,
+  "permission_btns": null
+}

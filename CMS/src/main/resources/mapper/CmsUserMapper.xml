@@ -1,0 +1,76 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dc.dao.CmsUserDao">
+    <!--用户登陆-->
+    <select id="login" parameterType="String" resultType="com.dc.pojo.CmsUser">
+        SELECT * FROM t_cms_user WHERE user_account=#{account} and is_deleted=0
+    </select>
+   <!--查询用户信息-->
+    <insert id="insertUser" parameterType="com.dc.pojo.CmsUser" useGeneratedKeys="true" keyProperty="user_id">
+        insert into
+        t_cms_user(user_name,user_account,login_password,user_phone,user_regtime,user_updetatime,user_status,user_age,user_sex,is_deleted,user_url,version,style)
+        values
+          (#{user_name},#{user_account},#{login_password},#{user_phone},now(),now(),#{user_status},#{user_age},#{user_sex},0,#{user_url},0,#{style})
+    </insert>
+    <!--修改用户信息-->
+    <update id="updateUser" parameterType="com.dc.pojo.CmsUser">
+        update t_cms_user set
+        <if test="user_name != null">
+            user_name = #{user_name},
+        </if>
+        <if test="user_account != null">
+            user_account = #{user_account},
+        </if>
+        <if test="login_password != null">
+            login_password = #{login_password},
+        </if>
+        <if test="user_phone != null">
+            user_phone = #{user_phone},
+        </if>
+
+        <if test="user_status != null">
+            user_status = #{user_status},
+        </if>
+
+        <if test="user_age != null">
+            user_age = #{user_age},
+        </if>
+        <if test="user_sex != null">
+            user_sex = #{user_sex},
+        </if>
+        <if test="user_url != null">
+            user_url = #{user_url},
+        </if>
+        <if test="style != null">
+            style = #{style},
+        </if>
+        version = #{version} + 1,
+        user_updetatime = now()
+        where user_id=#{user_id} and version=#{version}
+    </update>
+
+    <!--逻辑删除用户信息-->
+        <update id="deleteUsers" parameterType="String">
+        update t_cms_user set is_deleted = 1 where user_id in(${ids})
+        </update>
+     <!--搜索所有或根据id搜索用户信息-->
+    <select id="selectUserAll" resultType="com.dc.pojo.CmsUser">
+        select * from  t_cms_user where  is_deleted=0
+        <if test="user_id != null and user_id != 0">
+            and user_id = #{user_id}
+        </if>
+    </select>
+  <!--分页搜索用户信息-->
+    <select id="selectUserAllByPage" parameterType="map" resultType="com.dc.pojo.CmsUser">
+        select * from t_cms_user where is_deleted=0
+        <if test="likeName!=null">
+            and `user_name` like concat('%',#{likeName},'%')
+        </if>
+        <if test="likeName1!=null">
+            and `user_account` like concat('%',#{likeName1},'%')
+        </if>
+    </select>
+
+
+</mapper>

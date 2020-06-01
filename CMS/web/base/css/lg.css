@@ -1,0 +1,32 @@
+.lg {
+			margin-top:250px;
+			height: 100%;
+			width: 100%;
+		}
+.lgg{
+	margin-top:650px;
+	height: 100%;
+	width: 100%;
+}
+.new{
+	height:270px;
+	/*border: solid 1px green;*/
+}
+.a{
+	width: 200px;
+	height: 250px;
+	/*border: solid 1px green;*/
+	text-align: center;
+	margin-left:3%;
+	float: left;
+}
+.a img{
+	width: 150px;
+	height: 170px;
+}
+.a span{
+	color:#747778;
+}
+.companycenter{
+	margin-left: 30%;
+}

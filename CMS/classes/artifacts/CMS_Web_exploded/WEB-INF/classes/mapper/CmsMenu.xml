@@ -1,0 +1,56 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dc.dao.CmsMenuDao">
+    <!--新增分类-->
+    <insert id="insertMenu" parameterType="com.dc.pojo.Cmsmenu" useGeneratedKeys="true" keyProperty="menu_id">
+        insert into
+        t_cms_menu(code,menu_name,is_deleted)
+        values
+          (#{code},#{menu_name},0)
+    </insert>
+    <!--修改分类-->
+    <update id="updateMenu" parameterType="com.dc.pojo.Cmsmenu">
+        update t_cms_menu set
+        <if test="code != null">
+            code = #{code},
+        </if>
+        <if test="menu_name != null">
+            menu_name = #{menu_name}
+        </if>
+        where menu_id=#{menu_id}
+    </update>
+    <!--逻辑删除分类-->
+    <update id="deleteMenu" parameterType="String">
+        update t_cms_menu set is_deleted = 1 where menu_id in(${ids})
+        </update>
+     <!--查询一级分类-->
+    <select id="selectMenuAllByPage" parameterType="map" resultType="com.dc.pojo.Cmsmenu">
+        select * from t_cms_menu where is_deleted=0 and   99>code
+        <if test="likeName!=null">
+            and `code` like concat('%',#{likeName},'%')
+        </if>
+    </select>
+    <!--查询二级简分类-->
+    <select id="selectMenuAllByPage2" parameterType="map" resultType="com.dc.pojo.Cmsmenu">
+        select * from t_cms_menu where is_deleted=0 and   999>code and  code>99
+        <if test="likeName2!=null">
+            and ((#{likeName2}*100)+99)>code  and  code>(#{likeName2}*100)
+        </if>
+    </select>
+    <!--查询三级简分类-->
+    <select id="selectMenuAllByPage3" parameterType="map" resultType="com.dc.pojo.Cmsmenu">
+        select * from t_cms_menu where is_deleted=0 and   10000>code and code>1000
+        <if test="likeName3!=null">
+            and ((#{likeName3}*1000)+99)>code  and  code>(#{likeName3}*1000)
+        </if>
+    </select>
+    <!--根据id查询分类-->
+    <select id="selectCmsmenu" resultType="com.dc.pojo.Cmsmenu">
+        select * from  t_cms_menu  where is_deleted=0
+        <if test="menu_id != null and menu_id != 0">
+            and menu_id = #{menu_id}
+        </if>
+    </select>
+
+</mapper>

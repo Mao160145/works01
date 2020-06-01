@@ -1,0 +1,51 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dc.dao.CmsAdminDao">
+   <!--登录-->
+    <select id="login" parameterType="String" resultType="com.dc.pojo.CmsAdmin">
+        SELECT * FROM t_cms_admin WHERE admin_account=#{admin_account}
+    </select>
+    <!--管理员信息修改-->
+    <update id="updateAdmin" parameterType="com.dc.pojo.CmsAdmin">
+        update t_cms_admin set
+        <if test="admin_account != null">
+            admin_account = #{admin_account},
+        </if>
+        <if test="admin_password != null">
+            admin_password = #{admin_password},
+        </if>
+        <if test="admin_name != null">
+            admin_name = #{admin_name},
+        </if>
+        <if test="admin_title != null">
+            admin_title = #{admin_title},
+        </if>
+        <if test="admin_sex != null">
+            admin_sex = #{admin_sex},
+        </if>
+
+        <if test="admin_phone != null">
+            admin_phone = #{admin_phone},
+        </if>
+
+        <if test="admin_birthday != null">
+            admin_birthday = #{admin_birthday},
+        </if>
+
+        <if test="admin_url != null">
+            admin_url = #{admin_url},
+        </if>
+        version = #{version} + 1,
+        admin_hiredate = now()
+        where admin_id=#{admin_id} and version=#{version}
+    </update>
+
+    <!--管理员信息查询-->
+    <select id="selectAdminAll" resultType="com.dc.pojo.CmsAdmin">
+        select * from  t_cms_admin
+        <if test="admin_id != null and admin_id != 0">
+            where  admin_id = #{admin_id}
+        </if>
+    </select>
+</mapper>

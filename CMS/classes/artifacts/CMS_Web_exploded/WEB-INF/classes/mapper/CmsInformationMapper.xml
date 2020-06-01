@@ -1,0 +1,57 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dc.dao.CmsInformationDao">
+       <!--添加简历-->
+    <insert id="insertInformation" parameterType="com.dc.pojo.CmsInformation" useGeneratedKeys="true" keyProperty="resume_id">
+        insert into
+        t_cms_information(user_id,`name`,sex,education,date_birth,marital_status,phone,emil,expected_career,brief_introduction,is_deleted)
+        values
+          (#{user_id},#{name},#{sex},#{education},#{date_birth},#{marital_status},#{phone},#{emil},#{expected_career},#{brief_introduction},0)
+    </insert>
+     <!--修改简历-->
+    <update id="updateInformation" parameterType="com.dc.pojo.CmsInformation">
+        update t_cms_information set
+        <if test="name != null">
+            name = #{name},
+        </if>
+        <if test="sex != null">
+            sex = #{sex},
+        </if>
+        <if test="education != null">
+            education = #{education},
+        </if>
+        <if test="date_birth != null">
+            date_birth = #{date_birth},
+        </if>
+        <if test="marital_status != null">
+            marital_status = #{marital_status},
+        </if>
+        <if test="phone != null">
+            phone = #{phone},
+        </if>
+        <if test="emil != null">
+            emil = #{emil},
+        </if>
+        <if test="expected_career != null">
+            expected_career = #{expected_career},
+        </if>
+        <if test="brief_introduction != null">
+            brief_introduction = #{brief_introduction},
+        </if>
+
+          is_deleted=0
+           where user_id=#{user_id}
+    </update>
+    <!--逻辑删除简历-->
+    <update id="deleteInformation" parameterType="String">
+        update t_cms_information set is_deleted = 1 where user_id in(${ids})
+        </update>
+     <!--根据id查询简历-->
+    <select id="selectInformation" resultType="com.dc.pojo.CmsInformation">
+        select * from  t_cms_information where  is_deleted=0
+        <if test="user_id != null and user_id != 0">
+            and user_id = #{user_id}
+        </if>
+    </select>
+</mapper>

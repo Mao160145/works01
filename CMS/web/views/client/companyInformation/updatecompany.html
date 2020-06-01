@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>修改公司信息</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../../base/css/cen.css">
+
+</head>
+
+<body>
+<!--表单-->
+<form class="form-horizontal cen" id="cen" method="post">
+	<input type="hidden" name="company_id" id="Companyid">
+	<div class="form-group">
+		<label  class="col-sm-2 control-label">商标</label>
+		<div class="col-sm-10">
+
+			<img id="xmTanImg"/>
+			<div id="xmTanDiv"></div>
+			<input type="file" name="file" id="file" onchange="xmTanUploadImg(this)" accept="image/*"/><br/>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">公司名称</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" name="company_name" id="company_name" placeholder="请输入公司名称">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label  class="col-sm-2 control-label">公司别名</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" name="company_alias" id="company_alias" placeholder="请输入公司别名">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">公司地址</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" name="company_address" id="company_address" placeholder="请输入公司地址">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label  class="col-sm-2 control-label">公司类型</label>
+		<div class="col-sm-10">
+			<select name="companyType_id" id="companyType_id" >
+				<option value ="0" title="个人独资">个人独资</option>
+				<option value ="1" title="合伙公司">合伙公司</option>
+				<option value="2"  title="有限责任公司" >有限责任公司</option>
+				<option value="3" title="股份制公司">股份制公司</option>
+				<option value="4" title="集团公司">集团公司</option>
+				<option value="5" title="个人制公司">个人制公司</option>
+				<option value="6" title="其他">其他</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">公司产业</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" name="industry" id="industry" placeholder="请输入公司产业">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label  class="col-sm-2 control-label">公司规模</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control"  name="company_scale" id="company_scale" placeholder="请输入公司规模">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">公司简介</label>
+		<div class="col-sm-10">
+			<textarea class="form-control" name="company_introduce" id="company_introduce" rows="3"></textarea>
+		</div>
+	</div>
+</form>
+	<div class="cen_center">
+		<button type="button" class="btn btn-success updateCompanyid">提交</button>
+		<button type="button" class="btn btn-warning">重置</button>
+		<button type="button" class="btn btn-danger">关闭</button>
+	</div>
+
+<script src="../../../base/js/jquery-1.11.3.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/updatecompany.js"></script>
+<script>
+
+    //判断浏览器是否支持FileReader接口
+    if (typeof FileReader == 'undefined') {
+        document.getElementById("xmTanDiv").InnerHTML = "<h1>当前浏览器不支持FileReader接口</h1>";
+        //使选择控件不可操作
+        document.getElementById("file").setAttribute("disabled", "disabled");
+    }
+    //选择图片，马上预览
+    function xmTanUploadImg(obj) {
+        var file = obj.files[0];
+
+        console.log(obj);console.log(file);
+        console.log("file.size = " + file.size);  //file.size 单位为byte
+
+        var reader = new FileReader();
+
+        //读取文件过程方法
+        reader.onloadstart = function (e) {
+            console.log("开始读取....");
+        }
+        reader.onprogress = function (e) {
+            console.log("正在读取中....");
+        }
+        reader.onabort = function (e) {
+            console.log("中断读取....");
+        }
+        reader.onerror = function (e) {
+            console.log("读取异常....");
+        }
+        reader.onload = function (e) {
+            console.log("成功读取....");
+
+            var img = document.getElementById("xmTanImg");
+            img.src = e.target.result;
+            //或者 img.src = this.result;  //e.target == this
+        }
+
+        reader.readAsDataURL(file);
+    }
+</script>
+</body>
+</html>

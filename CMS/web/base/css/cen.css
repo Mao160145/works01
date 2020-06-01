@@ -1,0 +1,16 @@
+.cen {
+			margin-left: 400px;
+			margin-right: 300px;
+			margin-top:100px;
+		}
+		
+.cen_center {
+			margin-left: 550px;
+		}
+
+
+ img{
+	 height: 100px;
+	 width: 100px;
+	 border-radius:50px;
+ }

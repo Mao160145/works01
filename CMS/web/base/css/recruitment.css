@@ -1,0 +1,78 @@
+.zp {
+    margin-left: 1%;
+    height: 190px;
+    /*border: solid 1px lightgray;*/
+    /*background-color: #F2F6FC;*/
+}
+.zpdiv {
+    width: 350px;
+    height: 145px;
+    border: solid 1px lightgray;
+    margin-top: 10px;
+    margin-left:4%;
+    float: left;
+
+}
+
+.zpa {
+    margin-left: 5%;
+
+    font-size: 20px;
+}
+
+.zpp {
+    margin-left: 5%;
+    font-size: 16px;
+    margin-top: 4%;
+    color: #666666;
+}
+
+.zpdz {
+    margin-left: 5%;
+    margin-top: 6%;
+    font-size: 14px;
+    color: #B1B1B1;
+}
+
+/*右边*/
+.zpxx {
+    height: 140px;
+    width: 230px;
+    /*border: solid 1px green;*/
+    position: absolute;
+}
+
+/*左边*/
+.zpxz {
+    position: relative;
+    /*	border: solid 1px red;*/
+    margin-right:3%;
+    float: right;
+    height: 140px;
+    width: 160px;
+}
+
+.xz {
+    color: #F0AD4E;
+    font-size: 20px;
+    float: right;
+    margin-right: 2%;
+
+}
+
+.xl {
+    font-size: 15px;
+    float: right;
+    margin-left: 14%;
+    margin-top: 5%;
+}
+
+.zpbutton {
+    font-size: 16px;
+    color: #F0AD4E;
+    margin-left:45%;
+    margin-top:30%;
+    border:solid 1px #F0AD4E;
+    background-color:white;
+    border-radius:10px;
+}

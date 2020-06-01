@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<title>个人信息</title>
+	</head>
+
+	<body>
+		<img src="../../../images/login.jpg" height="300px" width="100%" />
+		<!--个人信息-->
+		<blockquote>
+			<span class="glyphicon glyphicon-bookmark" style="color: #F48E51;"></span> 个人信息
+			<small>Personal <cite title="Source Title">information</cite></small>
+		</blockquote>
+
+		<!--表格-->
+		<table class="table table-bordered">
+			<colgroup>
+				<col width="10%">
+				<col width="20%">
+				<col width="25%">
+				<col width="20%">
+				<col width="25%">
+			</colgroup>
+
+			<tbody>
+				<tr>
+					<td rowspan="4"><img  class="headImg"  style="height: 150px; width: 150px"></td>
+					<td>用户名</td>
+					<td id="user_name"></td>
+					<td>账号</td>
+					<td id="user_account"></td>
+				</tr>
+
+				<tr>
+					<td>密码</td>
+					<td id="login_password"></td>
+					<td>手机号</td>
+					<td id="user_phone"></td>
+				</tr>
+
+				<tr>
+					<td>年龄</td>
+					<td id="user_age"></td>
+					<td>性别</td>
+					<td id="user_sex"></td>
+				</tr>
+
+				<tr>
+					<td>简历</td>
+					<td><button type="button" class="btn btn-link" onclick="window.location.href='resume.html'">查看个人简历</button></td>
+					<td>操作</td>
+					<td>
+						<button type="submit" class="btn btn-link" onclick="window.location.href='updateuser.html'">编辑</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<script src="../../../base/js/jquery-1.11.3.min.js"></script>
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="js/user.js"></script>
+	</body>
+</html>

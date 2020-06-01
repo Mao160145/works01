@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>简历</title>
+		<link rel="stylesheet" href="../../../base/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../../base/plugins/font-awesome/css/font-awesome.css" media="all" />
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="../../../base/css/resume.css" rel="stylesheet">
+		<title>招聘信息</title>
+	</head>
+
+	<body>
+		<!--表格-->
+		<div class="page-header">
+			<h1>个人简历</h1>
+		</div>
+		<div class="divContent container">
+			<div class="row">
+
+				<div class="col-sm-3">
+					<blockquote>
+						<!--姓名-->
+						<h2 id="name"></h2>
+						<!--期望职业-->
+						<footer id="expected_career"></footer>
+					</blockquote>
+
+					<div class="row text-center">
+						<img alt="boy"  width="150px" class="img-responsive img-circle img-thumbnail headImg">
+
+					</div>
+					<div class="row text-center">
+						<h3>个人介绍</h3>
+					</div>
+
+					<div class="table-responsive">
+						<table class="table table-bordered table-striped table-hover table-condensed">
+							<tr>
+								<td >学历</td>
+								<td id="education"></td>
+								<td >性别</td>
+								<td id="sex"></td>
+							</tr>
+							<tr>
+								<td>出生日期</td>
+								<td id="date_birth"></td>
+								<td>婚姻状况</td>
+								<td id="marital_status"></td>
+							</tr>
+
+						</table>
+					</div>
+				</div>
+
+				<div class="col-sm-9">
+					<!-- 大屏幕 -->
+					<div class="jumbotron">
+						<!--<h2>个人证书</h2>
+						<hr>
+						<p id="Certificate_picture"></p>
+						<hr>-->
+						<h2>个人简介</h2>
+						<hr>
+						<p id="brief_introduction"></p>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="panel panel-default">
+					<div class="panel-heading">如果你感兴趣</div>
+					<div class="panel-body">
+						<form action="" method="post">
+							<label class="control-label">电话号码</label>
+							<p id="phone"></p>
+							<label class="control-label">Email</label>
+							<p id="emil"></p>
+							<br/>
+
+							<div class="btn-group pull-right">
+								<a href="/views/client/userInformation/updateresume.html" id="edit" target="iframe_a">编辑</a>
+							</div>
+							<div class="clearfix"></div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../../base/plugins/layui/layui.js"></script>
+
+		<script src="../../../base/js/jquery-1.11.3.min.js"></script>
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../../../base/plugins/layui/layui.js"></script>
+		<script type="text/javascript" src="../../../index/js/baseUtil.js" ></script>
+
+		<script src="js/resume.js"></script>
+
+	</body>
+
+</html>

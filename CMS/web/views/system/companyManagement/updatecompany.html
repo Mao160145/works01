@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>修改公司信息</title>
+		<link rel="stylesheet" href="../../../base/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../../base/plugins/font-awesome/css/font-awesome.css" media="all" />
+	</head>
+	<style type="text/css">
+		.with {
+			margin-left: 55px;
+			width: 1155px;
+			height: 44px;
+		}
+	</style>
+
+	<body>
+		<blockquote class="site-text layui-elem-quote">
+			<h3>修改公司信息</h3>
+		</blockquote>
+
+		<!--表单-->
+		<form class="layui-form" action="javascript:;">
+			<input type="hidden"  name="token" id="token" />
+			<input type="hidden"  name="company_id" id="companyId" />
+			<div class="layui-form-item ">
+				<label class="layui-form-label">商标</label>
+				<img src="../../../images/tx.jpg" width="100px" height="100px">
+			</div>
+
+			<div class="layui-form-item with">
+				<input id="showImg" class="layui-input with" type="file" name="company_logo" placeholder="请上传头像" />
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">*公司名称</label>
+				<div class="layui-input-block">
+					<input type="text" name="company_name" required lay-verify="required" placeholder="请输入公司名称" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">*公司别名</label>
+				<div class="layui-input-block">
+					<input type="text" name="company_alias" required placeholder="请输入公司别名" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">*公司地址</label>
+				<div class="layui-input-block">
+					<input type="text" name="company_address" required placeholder="请输入地址" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">*公司类型</label>
+				<div class="layui-input-block">
+					<select name="companyType_id" id="companyType_id" lay-verify="required">
+						<option value="0" title="个人独资">个人独资</option>
+						<option value="1" title="合伙公司">合伙公司</option>
+						<option value="2"  title="有限责任公司" >有限责任公司</option>
+						<option value="3" title="股份制公司">股份制公司</option>
+						<option value="4" title="集团公司">集团公司</option>
+						<option value="5" title="个人制公司">个人制公司</option>
+						<option value="6" title="其他">其他</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">*公司产业</label>
+				<div class="layui-input-block">
+					<input type="text" name="industry" required placeholder="请输入公司产业" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">*公司规模</label>
+				<div class="layui-input-block">
+					<input type="text" name="company_scale" required placeholder="请输入公司规模" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">*公司余额</label>
+				<div class="layui-input-block">
+					<input type="text" name="company_balance" required placeholder="请输入公司余额" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+
+				<div class="layui-form-item layui-form-text">
+					<label class="layui-form-label">公司简介</label>
+					<div class="layui-input-block">
+						<textarea name="company_introduce" placeholder="请输入公司简介" class="layui-textarea a"></textarea>
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<div class="layui-input-block">
+						<button class="layui-btn layui-btn-sm updatecompany" lay-submit lay-filter="updatecompany">提交</button>
+						<button class="layui-btn layui-btn-sm layui-btn-primary" type="reset">重置</button>
+						<button class="layui-btn layui-btn-sm layui-btn-danger">删除</button>
+					</div>
+				</div>
+		</form>
+		<script type="text/javascript" src="../../../base/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../../../base/plugins/layui/layui.js"></script>
+		<script type="text/javascript" src="../../../index/js/baseUtil.js" ></script>
+		<script src="js/updatecompany.js" ></script>
+	</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>首页</title>
+		<link rel="stylesheet" href="../../base/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../base/plugins/font-awesome/css/font-awesome.css" media="all" />
+		<link rel="stylesheet" href="../../index/css/index.css" media="all" />
+	</head>
+
+	<body>
+	
+		<!-- 侧边导航-->
+		<div class="layui-side">
+			<div class="layui-side-scroll layui-bg-black">
+				<ul class="layui-nav layui-nav-tree menu_ul" lay-filter="test">
+					<li class="layui-nav-item">
+						<a href="javascript:;" data-id="5"><img class="admin_url layui-nav-img"><span class="admin_name"></span></a>
+
+						<dl class="layui-nav-child">
+							<dd>
+								<a class="li_item findAdmin" data-id="501" data-url="adminManagement/personal.html" href="javascript:;">个人信息</a>
+							</dd>
+
+							<dd>
+								<a class="li_item" data-id="502" data-url="adminManagement/personalSetting.html" href="javascript:;">个人设置</a>
+							</dd>
+
+							<dd>
+								<a class="outLogin">注销</a>
+							</dd>
+						</dl>
+					</li>
+
+					<li class="layui-nav-item">
+						<a class="li_item" data-id="1" data-url="" href="javascript:;"><i class="fa fa-home" aria-hidden="true"></i> &nbsp;首页</a>
+					</li>
+
+					<li class="layui-nav-item">
+						<a class="li_item" data-id="2" data-url="/swagger/index.html" href="javascript:;"><i class="fa fa-bug" aria-hidden="true"></i> &nbsp;Swagger</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+
+		<div class="layui-body">
+			<!--内容主题区域-->
+			<div class="layui-tab layui-tab-brief" lay-allowClose="true" lay-filter="demo">
+				<!--嵌套页面选项卡-->
+				<ul class="layui-tab-title">
+					<li lay-id="lid_1" class="layui-this">首页</li>
+				</ul>
+				<!--嵌套页面容器-->
+				<div class="layui-tab-content">
+					<!--嵌套页面项-->
+					<div class="layui-tab-item layui-show">
+						<iframe src="index1.html" id="ifm_1"></iframe>
+					</div>
+				</div>
+			</div>
+
+			<div class="layui-footer">
+				<!--底部固定区域-->
+				<center>Three-person line &nbsp;©湖南科技职业学院</center>
+			</div>
+		</div>
+		</div>
+		<script type="text/javascript" src="../../base/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../../base/plugins/layui/layui.js"></script>
+		<script src="../../index/js/index.js"></script>
+
+	</body>
+
+</html>

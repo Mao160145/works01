@@ -1,0 +1,26 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dc.dao.CmsUserinformationDao">
+       <!--新增应聘信息-->
+    <insert id="insertUserinformation" parameterType="com.dc.pojo.CmsUserinformation" useGeneratedKeys="true" keyProperty="userInformation_id">
+        insert into
+        userinformation(position_name,user_id,user_name,position_id,is_deleted,company_id)
+        values
+          (#{position_name},#{user_id},#{user_name},#{position_id},0,#{company_id})
+    </insert>
+    <!--应聘id查询应聘信息-->
+    <select id="selectInformation" resultType="com.dc.pojo.CmsUserinformation">
+        select * from  userinformation where  is_deleted=0
+        <if test="userInformation_id != null and user_id != 0">
+            and userInformation_id = #{userInformation_id}
+        </if>
+    </select>
+      <!--根据公司分页查应聘信息-->
+    <select id="selectUserinformationAllByPage" parameterType="map" resultType="com.dc.pojo.CmsUserinformation">
+        select * from userinformation where is_deleted=0
+        <if test="company_id != null and company_id != 0">
+            and company_id = #{company_id}
+        </if>
+    </select>
+</mapper>

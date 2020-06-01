@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>注册</title>
+		<link rel="stylesheet" type="text/css" href="../../base/css/style.css" />
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../../base/css/registered.css" />
+	</head>
+	
+	<body>
+
+	<form class="as" id="myform" action="#" method="post">
+		<div class="dv">
+			<div class="dv1">
+				<strong>请填写注册信息</strong>
+			</div>
+
+			<div class="dv2">
+				<img id="xmTanImg"/>
+				<div id="xmTanDiv"></div>
+				<input type="file" name="file" id="file" onchange="xmTanUploadImg(this)" accept="image/*"/><br/>
+			</div>
+
+			<div class="dv3">
+				<input  class="user_account" name="user_account" type="text" placeholder="请输入您的账号"/>
+			</div>
+			
+			<div class="dv4">
+				<input  class="login_password" name="login_password" type="password" placeholder="请输入您的密码" />
+			</div>
+			
+			<div class="dv4">
+				<input  class="user_name" name="user_name" type="text" placeholder="请输入您的用户名" />
+			</div>
+
+			<div class="dv4">
+				<input  class="user_phone" name="user_phone" type="text" placeholder="请输入您的手机号" />
+			</div>
+			
+			<div class="dv4">
+				<input  class="user_age" name="user_age" type="text" placeholder="请输入您的年龄" />
+			</div>
+			
+			<div class="dv5">
+				<input  type="radio" name="user_sex" class="user_sex" value="0" title="保密" checked>保密&emsp;
+				<input type="radio" name="user_sex" class="user_sex" value="1" title="男">男&emsp;
+				<input  type="radio" name="user_sex" class="user_sex" value="2" title="女">女&emsp;
+			</div>
+
+			<div class="dv5">
+				<input name="style" class="style" value="0" type="radio" />普通用户&emsp;
+				<input  name="style" class="style" value="1" type="radio"/>公司负责人&emsp;
+			</div>
+
+			<div class="dv6">
+				<button class="registered">立即注册</button>
+			</div>
+		</div>
+
+
+	</form>
+	<script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	<script src="../../base/js/jquery-1.11.3.min.js"></script>
+	<script src="../../base/js/registered.js"></script>
+	<script>
+
+        //判断浏览器是否支持FileReader接口
+        if (typeof FileReader == 'undefined') {
+            document.getElementById("xmTanDiv").InnerHTML = "<h1>当前浏览器不支持FileReader接口</h1>";
+            //使选择控件不可操作
+            document.getElementById("file").setAttribute("disabled", "disabled");
+        }
+        //选择图片，马上预览
+        function xmTanUploadImg(obj) {
+            var file = obj.files[0];
+
+            console.log(obj);console.log(file);
+            console.log("file.size = " + file.size);  //file.size 单位为byte
+
+            var reader = new FileReader();
+
+            //读取文件过程方法
+            reader.onloadstart = function (e) {
+                console.log("开始读取....");
+            }
+            reader.onprogress = function (e) {
+                console.log("正在读取中....");
+            }
+            reader.onabort = function (e) {
+                console.log("中断读取....");
+            }
+            reader.onerror = function (e) {
+                console.log("读取异常....");
+            }
+            reader.onload = function (e) {
+                console.log("成功读取....");
+
+                var img = document.getElementById("xmTanImg");
+                img.src = e.target.result;
+                //或者 img.src = this.result;  //e.target == this
+            }
+
+            reader.readAsDataURL(file);
+        }
+	</script>
+
+	</body>
+</html>

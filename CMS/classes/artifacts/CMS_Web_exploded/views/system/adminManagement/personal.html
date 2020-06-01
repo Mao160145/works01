@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>查看个人信息</title>
+		<link rel="stylesheet" href="../../../base/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../../base/plugins/font-awesome/css/font-awesome.css" media="all" />
+	</head>
+
+	<body>
+		<blockquote class="site-text layui-elem-quote">
+			<h3>查看个人信息</h3>
+		</blockquote>
+
+		<div class="layui-row">
+			<form class="layui-form">
+				<table class="layui-table">
+					<colgroup>
+						<col width="10%">
+					    <col width="20%">
+					    <col width="25%">
+					    <col width="20%">
+					    <col width="25%">
+					</colgroup>
+
+					<tbody>						
+						<tr>
+							<td rowspan="4" ><img id="img" src="" /></td>
+							<td>姓名</td>
+							<td id="name"></td>
+							<td>账号</td>
+							<td id="account"></td>
+						</tr>
+
+						<tr>
+							<td>性别</td>
+							<td id="sex"></td>
+							<td>出生日期</td>
+							<td id="birthday"></td>
+						</tr>
+
+						<tr>
+							<td>手机</td>
+							<td id="phone"></td>
+							<td>修改时间</td>
+							<td id="hiredate"></td>
+						</tr>
+
+					</tbody>
+				</table>
+			</form>
+		</div>
+
+		<fieldset class="layui-elem-field layui-field-title">
+			<legend>登录日志</legend>
+		</fieldset>		
+				<form class="layui-form"action="javascript:;">
+					<table class="layui-table">
+						<colgroup>
+							<col width="100">
+							<col width="100">
+							<col width="100">
+							
+						</colgroup>
+
+						<thead>
+							<tr>
+								<th>用户ID</th>
+								<th>用户姓名</th>
+								<th>登录时间</th>
+								
+							</tr>
+						</thead>
+
+						<tbody class="table_tbody">
+
+						</tbody>
+					</table>
+					<div id="table_page"></div>
+				</form>
+
+		<script type="text/javascript" src="../../../base/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../../../base/plugins/layui/layui.js"></script>
+		<script src="js/personal.js" ></script>
+	</body>
+</html>

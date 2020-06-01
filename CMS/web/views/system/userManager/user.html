@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>用户管理</title>
+		<link rel="stylesheet" href="../../../base/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../../base/plugins/font-awesome/css/font-awesome.css" media="all" />
+	</head>
+
+	<body>
+		<blockquote class="site-text layui-elem-quote">
+			<h3>用户管理</h3>
+		</blockquote>
+
+		<div class="layui-row">
+			<div class="layui-col-md5">
+				<button class="layui-btn layui-btn-danger layui-btn-sm batchDelete">批量删除</button>
+			</div>
+
+			<div class="layui-col-md6">
+				<label>账号;</label>
+				<div class="layui-input-inline">
+					<input type="text" name="account" id="likeName1" required lay-verify="required" placeholder="请输入账号" autocomplete="off" class="layui-input">
+				</div>&emsp;
+
+				<label>姓名:</label>
+				<div class="layui-input-inline">
+					<input type="text" name="username" id="name" required lay-verify="required" placeholder="请输入姓名" autocomplete="off" class="layui-input">
+				</div>
+				<button class="layui-btn layui-btn-sm search">搜索</button>
+			</div>
+
+			<div class="layui-row">
+				<form class="layui-form" action="javascript:;">
+					<table class="layui-table">
+						<colgroup>
+							<col width="50">
+							<col width="90">
+							<col width="90">
+							<col width="90">
+							<col width="100">
+							<col width="100">
+							<col width="100">
+							<col width="100">
+							<col width="100">
+							<col width="200">
+						</colgroup>
+
+						<thead>
+							<tr>
+								<th><input type="checkbox" lay-filter="parentBox" class="parentBox" lay-skin="primary"></th>
+								<th>姓名</th>
+								<th>账号</th>
+								<th>手机号</th>
+								<th>类型</th>
+								<th>性别</th>
+								<th>年龄</th>
+								<th>注册时间</th>
+								<th>修改时间</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+
+						<tbody class="table_tbody">
+
+						</tbody>
+					</table>
+					<div id="table_page"></div>
+				</form>
+			</div>
+
+			<script type="text/javascript" src="../../../base/js/jquery-1.11.3.min.js"></script>
+			<script type="text/javascript" src="../../../base/plugins/layui/layui.js"></script>
+			<script type="text/javascript" src="js/user.js"></script>
+		</div>
+	</body>
+</html>

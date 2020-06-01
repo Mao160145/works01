@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>分类管理</title>
+		<link rel="stylesheet" href="../../../base/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../../base/plugins/font-awesome/css/font-awesome.css" media="all" />
+	</head>
+
+	<body>
+		<blockquote class="site-text layui-elem-quote">
+			<h3>分类管理</h3>
+		</blockquote>
+
+		<div class="layui-col-md10">
+			<label>搜索一级分类:</label>
+			<div class="layui-input-inline">
+				<input type="text" required lay-verify="required" placeholder="输入菜单编号" autocomplete="off" id="likeName" class="layui-input ">
+			</div>&emsp;
+			<button class="layui-btn layui-btn-sm sousuo">搜索</button>
+			<button class="layui-btn layui-btn-danger layui-btn-sm batchDeleteCompany">批量删除</button>
+			<button class="layui-btn layui-btn-sm insertMenu">添加分类</button>
+		</div>
+
+		<div class="layui-row layui-col-md4">
+			<form class="layui-form" action="javascript:;">
+				<table class="layui-table">
+					<colgroup>
+						<col width="50">
+						<col width="100">
+						<col width="100">
+						<col width="100">
+						<col width="100">
+					</colgroup>
+					<thead>
+						<tr>
+							<th><input type="checkbox" name="" lay-skin="primary"></th>
+							<th>分类ID</th>
+							<th>分类编号</th>
+							<th>分类名称</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody class="table_tbody">
+					</tbody>
+				</table>
+				<div id="table_page"></div>
+			</form>
+		</div>
+		<div class="layui-row layui-col-md4">
+			<form class="layui-form" action="javascript:;">
+				<table class="layui-table">
+					<colgroup>
+						<col width="50">
+						<col width="100">
+						<col width="100">
+						<col width="100">
+						<col width="100">
+					</colgroup>
+					<thead>
+					<tr>
+						<th><input type="checkbox" name="" lay-skin="primary"></th>
+						<th>分类ID</th>
+						<th>分类编号</th>
+						<th>分类名称</th>
+						<th>操作</th>
+					</tr>
+					</thead>
+					<tbody class="table_tbody2">
+					</tbody>
+				</table>
+				<div id="table_page2"></div>
+			</form>
+		</div>
+		<div class="layui-row  layui-col-md4">
+			<form class="layui-form" action="javascript:;">
+				<table class="layui-table">
+					<colgroup>
+						<col width="50">
+						<col width="100">
+						<col width="100">
+						<col width="100">
+						<col width="100">
+					</colgroup>
+					<thead>
+					<tr>
+						<th><input type="checkbox" name="" lay-skin="primary"></th>
+						<th>分类ID</th>
+						<th>分类编号</th>
+						<th>分类名称</th>
+						<th>操作</th>
+					</tr>
+					</thead>
+					<tbody class="table_tbody3">
+					</tbody>
+				</table>
+				<div id="table_page3"></div>
+			</form>
+		</div>
+
+
+		<script type="text/javascript" src="../../../base/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../../../base/plugins/layui/layui.js"></script>
+		<script type="text/javascript" src="js/recruitmentStatistics.js">
+		</script>
+	</body>
+
+</html>

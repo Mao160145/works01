@@ -1,0 +1,122 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dc.dao.CmsPositionDao">
+      <!--新增招聘-->
+    <insert id="insertPositionr" parameterType="com.dc.pojo.CmsPositionVo" useGeneratedKeys="true" keyProperty="position_id">
+    insert into
+    t_cms_positions(company_name,position_name,position_type,position_people,salary,education,position_introduce,is_deleted,user_id,release_time,state,work_address,company_id)
+    values
+    (#{company_name},#{position_name},#{position_type},#{position_people},#{salary},#{education},#{position_introduce},0,#{user_id},now(),2,#{work_address},#{company_id})
+    </insert>
+    <!--新增招聘-->
+    <update id="payment" parameterType="com.dc.pojo.CmsPositionVo">
+         UPDATE `t_cms_company` SET `company_balance` = company_balance - #{company_balance}  WHERE company_id=#{company_id}
+     </update>
+    <!--统计流水-->
+    <update id="Flowingwater" parameterType="com.dc.pojo.CmsPositionVo">
+         UPDATE `t_cms_statistics` SET `Statistics_turnover` = Statistics_turnover + #{company_balance}  WHERE user_id=#{user_id}
+     </update>
+    <!--统计招聘总数-->
+    <update id="StatisticsPosition" parameterType="com.dc.pojo.CmsPositionVo" >
+         update t_cms_statistics set Statistics_recruit = Statistics_recruit + 1  WHERE user_id=#{user_id}
+    </update>
+    <!--充值-->
+    <update id="addpayment" parameterType="com.dc.pojo.CmsCompany">
+        update t_cms_company set company_balance = company_balance + #{company_balance} where company_id = #{company_id}
+     </update>
+    <!--统计总金额-->
+    <update id="addTotalsum" parameterType="com.dc.pojo.CmsCompany">
+        update t_cms_statistics set Statistics_amount = Statistics_amount + #{company_balance} where user_id = #{user_id}
+    </update>
+    <!--支付-->
+    <select id="selectpayment" parameterType="Integer" resultType="com.dc.pojo.CmsCompany">
+        SELECT * FROM t_cms_company WHERE company_id=#{company_id} and is_deleted=0
+    </select>
+    <!--查询平台一天发布招聘信息的总金额-->
+   <select id="Number" resultType="com.dc.pojo.Number">
+    SELECT
+	 COUNT(1) AS countNumber,
+	 DATE_FORMAT(release_time,'%Y-%m-%d') AS dateTime
+    FROM
+	t_cms_positions
+     GROUP BY DATE_FORMAT(release_time,'%Y-%m-%d')
+   </select>
+    <!--修改招聘信息-->
+    <update id="updatePosition" parameterType="com.dc.pojo.CmsPosition">
+        update t_cms_positions set
+        <if test="company_name != null">
+            company_name = #{company_name},
+        </if>
+        <if test="position_name != null">
+            position_name = #{position_name},
+        </if>
+        <if test="position_type != null">
+            position_type = #{position_type},
+        </if>
+        <if test="position_people != null">
+            position_people = #{position_people},
+        </if>
+
+        <if test="salary != null">
+            salary = #{salary},
+        </if>
+
+        <if test="education != null">
+            education = #{education},
+        </if>
+        <if test="position_introduce != null">
+            position_introduce = #{position_introduce},
+        </if>
+        <if test="state != null">
+            state = #{state},
+        </if>
+        <if test="work_address != null">
+            work_address = #{work_address},
+        </if>
+        release_time = now()
+        where position_id=#{position_id}
+    </update>
+
+     <!--逻辑删除招聘信息-->
+    <update id="deletePosition" parameterType="String">
+       update t_cms_positions set is_deleted = 1 where position_id in(${ids})
+     </update>
+    <!--根据用户id或招聘信息id查询招聘信息(用户修改)-->
+    <select id="selectPositionAll" resultType="com.dc.pojo.CmsPosition">
+        select * from t_cms_positions where is_deleted=0
+        <if test="user_id != null and user_id != 0">
+            and user_id = #{user_id}
+        </if>
+        <if test="position_id != null and position_id != 0">
+            and position_id = #{position_id}
+        </if>
+    </select>
+      <!--根据公司名字或招聘职位分页查询招聘信息-->
+    <select id="selectPositionAllByPage" parameterType="map" resultType="com.dc.pojo.CmsPosition">
+        select * from t_cms_positions where is_deleted=0
+        <if test="likeName!=null">
+            and `company_name` like concat('%',#{likeName},'%')
+        </if>
+        <if test="likeName1!=null">
+            and `position_name` like concat('%',#{likeName1},'%')
+        </if>
+    </select>
+
+    <select id="selectPositionIdAllByPage" parameterType="map" resultType="com.dc.pojo.CmsPosition">
+        select * from t_cms_positions where is_deleted=0
+        <if test="user_id != null and user_id != 0">
+            and user_id = #{user_id}
+        </if>
+    </select>
+
+    <!--根据招聘职位分页查询招聘信息-->
+    <select id="selectPositionstateAllByPage" parameterType="map" resultType="com.dc.pojo.CmsPosition">
+        select * from t_cms_positions where is_deleted=0 and state=0
+        <if test="likeName!=null">
+            and `position_name` like concat('%',#{likeName},'%')
+        </if>
+    </select>
+
+
+</mapper>
